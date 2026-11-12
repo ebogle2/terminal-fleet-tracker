@@ -1,0 +1,15 @@
+# --- Maven build output ---
+target/
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+out/
+
+# --- macOS ---
+.DS_Store
+
+# --- Secrets (future database credentials must never be committed) ---
+*.env
+.env
+config/local.properties
