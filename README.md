@@ -20,7 +20,7 @@ unit testing, and incremental version control.
 | Project skeleton, Maven build, architecture docs | ✅ Done |
 | Vehicle hierarchy (Truck, Van, Car, Motorcycle) | ⬜ Planned |
 | Maintenance records per vehicle | ⬜ Planned |
-| Precision cost tracking with `BigDecimal` | ⬜ Planned |
+| Precision cost tracking with `BigDecimal` | ✅ Done |
 | Polymorphic maintenance cost calculation | ⬜ Planned |
 | Sorting by mileage, year, cost, and more via `Comparator` | ⬜ Planned |
 | In-memory repository | ⬜ Planned |
@@ -109,8 +109,12 @@ classDiagram
     class Money {
         <<immutable>>
         -BigDecimal amount
+        +of(String)$ Money
+        +zero()$ Money
         +add(Money) Money
+        +subtract(Money) Money
         +multiply(BigDecimal) Money
+        +getAmount() BigDecimal
     }
 
     class VehicleRepository {
@@ -244,7 +248,7 @@ terminal-fleet-tracker/
 ## Roadmap
 
 1. ✅ Project skeleton & architecture documentation
-2. ⬜ `Money` value object + unit tests
+2. ✅ `Money` value object + unit tests
 3. ⬜ `MaintenanceRecord` + abstract `Vehicle`
 4. ⬜ Vehicle subclasses with polymorphic cost hooks
 5. ⬜ Repository interface + in-memory implementation
